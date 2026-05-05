@@ -1,4 +1,4 @@
-﻿# Record Shop API
+# Record Shop API
 
 ## Overview
 A backend API for the Northcoders Record Shop inventory system, allowing the shop to store, query and update their album stock.
