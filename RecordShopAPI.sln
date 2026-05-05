@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37216.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordShopAPI", "RecordShopAPI\RecordShopAPI.csproj", "{B8F50B82-19F5-4E41-87CF-6A50A8EC2FDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordShopAPI.Tests", "RecordShopAPI.Tests\RecordShopAPI.Tests.csproj", "{3FC1BE7F-E264-4195-BB66-085916C9E19A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8F50B82-19F5-4E41-87CF-6A50A8EC2FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F50B82-19F5-4E41-87CF-6A50A8EC2FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F50B82-19F5-4E41-87CF-6A50A8EC2FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F50B82-19F5-4E41-87CF-6A50A8EC2FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC1BE7F-E264-4195-BB66-085916C9E19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC1BE7F-E264-4195-BB66-085916C9E19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC1BE7F-E264-4195-BB66-085916C9E19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC1BE7F-E264-4195-BB66-085916C9E19A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BC9B530-666B-4075-9E96-7E4B1DC6AFAF}
+	EndGlobalSection
+EndGlobal
