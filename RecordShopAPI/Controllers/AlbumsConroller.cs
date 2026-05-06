@@ -27,8 +27,9 @@ namespace RecordShopAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult GetAlbumById(int id)
         {
+            if (id <= 0) return BadRequest("ID must be a positive number.");
             var album = _albumService.GetAlbumById(id);
-            if (album == null) return NotFound("Album not found.");
+            if (album == null) return NotFound($"Album with ID {id} not found.");
             return Ok(album);
         }
 
@@ -36,6 +37,9 @@ namespace RecordShopAPI.Controllers
         [HttpPost]
         public IActionResult AddAlbum([FromBody] Album album)
         {
+            if (album == null) return BadRequest("Album data is required.");
+            if (string.IsNullOrWhiteSpace(album.Name)) return BadRequest("Album name is required.");
+            if (string.IsNullOrWhiteSpace(album.Artist)) return BadRequest("Artist name is required.");
             var created = _albumService.AddAlbum(album);
             return Ok(created);
         }
@@ -54,8 +58,9 @@ namespace RecordShopAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteAlbum(int id)
         {
+            if (id <= 0) return BadRequest("ID must be a positive number.");
             var deleted = _albumService.DeleteAlbum(id);
-            if (!deleted) return NotFound("Album not found.");
+            if (!deleted) return NotFound($"Album with ID {id} not found.");
             return Ok();
         }
 
@@ -91,5 +96,6 @@ namespace RecordShopAPI.Controllers
             if (album == null) return NotFound("Album not found.");
             return Ok(album);
         }
+       
     }
 }
