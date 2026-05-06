@@ -18,13 +18,25 @@ namespace RecordShopAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<RecordShopContext>(options => options.UseInMemoryDatabase("RecordShop"));
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<RecordShopContext>(options =>
+            {
+                if (connectionString == "InMemoryDatabase")
+                {
+                    options.UseInMemoryDatabase("RecordShop");
+                }
+                else
+                {
+                    options.UseSqlServer(connectionString);
+                }
+            });
             builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
             builder.Services.AddScoped<IAlbumService, AlbumService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();

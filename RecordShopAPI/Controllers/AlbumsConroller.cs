@@ -41,9 +41,10 @@ namespace RecordShopAPI.Controllers
         }
 
         // PUT update album
-        [HttpPut]
-        public IActionResult UpdateAlbum([FromBody] Album album)
+        [HttpPut("{id}")]
+        public IActionResult UpdateAlbum(int id, [FromBody] Album album)
         {
+            album.AlbumId = id;
             var updated = _albumService.UpdateAlbum(album);
             if (updated == null) return NotFound("Album not found.");
             return Ok(updated);
